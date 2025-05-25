@@ -24,8 +24,21 @@ We performed outlier analysis using statistical methods to identify extreme valu
 **Feature Scaling**
 Finally, we applied both normalization and standardization techniques to rescale the selected numerical features. This step ensured that all input variables were on a similar scale, which is particularly important for algorithms sensitive to feature magnitude, such as linear models.
 
+**Feature and Target Selection**
+To develop an effective prediction model for household energy consumption, we began by selecting relevant input features and defining the target variable. After examining the dataset, we excluded the 'Date' column due to its non-numeric, non-predictive nature, and also removed 'Active Power' from the feature set, as it was designated as the target variable for prediction.
+These continuous numerical variables were considered potentially influential in predicting active power consumption.
 
+**Target Variable Definition**
+The target variable, Active Power, represents the real power consumed by a household and is measured as a continuous variable. Its numeric and unbounded nature made it suitable for regression-based modeling approaches.
 
+**Model Selection**
+Given the continuous nature of the target and the linear relationships observed during correlation analysis, we selected the Linear Regression algorithm as a baseline model. This approach is not only interpretable but also efficient for establishing a foundational performance benchmark.
 
+**Data Splitting**
+To evaluate the model’s generalizability, the dataset was split into training and testing subsets. This allows the model to learn patterns from the training data and validate its performance on previously unseen data. A standard train-test split ratio (e.g., 80/20 or 70/30) was used to ensure a fair evaluation.
 
+**Model Training and Prediction**
+The Linear Regression model was trained using the selected input features. After training, the model was used to generate predictions on both the training and test sets. This step helped assess whether the model was underfitting or overfitting the data.
 
+**Performance Evaluation**
+To quantify the model's performance, we used the Root Mean Squared Error (RMSE) as the primary evaluation metric. RMSE provides a clear measure of the average magnitude of prediction errors, penalizing larger deviations more heavily. Lower RMSE values indicate better alignment between predicted and actual consumption values.
