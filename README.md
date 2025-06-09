@@ -38,7 +38,7 @@ Given the continuous nature of the target and the linear relationships observed 
 To evaluate the model’s generalizability, the dataset was split into training and testing subsets. This allows the model to learn patterns from the training data and validate its performance on previously unseen data. A standard train-test split ratio (e.g., 80/20 or 70/30) was used to ensure a fair evaluation.
 
 **Model Training and Prediction**
-The Linear Regression model was trained using the selected input features. After training, the model was used to generate predictions on both the training and test sets. This step helped assess whether the model was underfitting or overfitting the data.
+The **Linear Regression, KNN, Decision Tree** model was trained using the selected input features. After training, the model was used to generate predictions on both the training and test sets. This step helped assess whether the model was underfitting or overfitting the data and also help to find the suitable model for the given data set.
 
 **Performance Evaluation**
 To quantify the model's performance, we used the Root Mean Squared Error (RMSE) as the primary evaluation metric. RMSE provides a clear measure of the average magnitude of prediction errors, penalizing larger deviations more heavily. Lower RMSE values indicate better alignment between predicted and actual consumption values.
