@@ -295,3 +295,28 @@ root_mean_squared_error( trlab, tr_pred )
 mean_squared_error( tslab, ts_pred )
 root_mean_squared_error( tslab, ts_pred )
 
+#Tunning
+
+para = {
+    "max_leaf_nodes": [4,7,9],
+    "random_state": [10,20,15],
+    "max_features": [3,5,7],
+    "ccp_alpha": [0.0,0.2,0.5]
+}
+
+# Built Model
+DT_model = DecisionTreeRegressor()
+gsv = GridSearchCV(param_grid= para, cv = 5, estimator= DT_model)
+gsv.fit(trdata, trlab)
+
+# Select best model
+best_model = gsv.best_estimator_
+tr_pred = best_model.predict(trdata)
+ts_pred = best_model.predict(tsdata)
+
+#Performance Check
+mean_squared_error( trlab, tr_pred )
+root_mean_squared_error( trlab, tr_pred )
+mean_squared_error( tslab, ts_pred )
+root_mean_squared_error( tslab, ts_pred )
+
